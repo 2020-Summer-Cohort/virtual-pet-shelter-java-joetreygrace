@@ -24,16 +24,25 @@ public class VirtualPetShelter {
         virtualPets.remove(petToRemove.getVirtualPetName());
     }
 
-    //for ( VirtualPet pet: pets.values() ) {
-//        pet.feed();
-//    }
     public void waterAllPetsAtOnce() {
         for (VirtualPet pets : virtualPets.values()) {
-            pets.giveWater(pets.getThirstLevel());
+            pets.giveWater();
         }
     }
 
-//    public void playWithASinglePet(String petName) {
-//        virtualPets.get(petName).playWithPet();
-//    }
+    public void feedAllPetsAtOnce() {
+        for (VirtualPet pets : virtualPets.values()) {
+            pets.giveFood();
+        }
+    }
+
+    public void playWithASinglePet(String petName) {
+        virtualPets.get(petName).playWithPet();
+    }
+
+    public void tickForAllPetsAtOnce() {
+        for (VirtualPet pets : virtualPets.values()) {
+            pets.tick();
+        }
+    }
 }

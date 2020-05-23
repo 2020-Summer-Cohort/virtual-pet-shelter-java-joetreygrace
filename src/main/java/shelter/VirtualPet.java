@@ -35,7 +35,7 @@ public class VirtualPet {
         return boredomLevel;
     }
 
-    public int giveWater(int thirstLevel) {
+    public int giveWater() {
         thirstLevel = thirstLevel - 15;
         if (thirstLevel < 0) {
             thirstLevel = 0;
@@ -43,7 +43,7 @@ public class VirtualPet {
         return thirstLevel;
     }
 
-    public int giveFood(int hungerLevel) {
+    public int giveFood() {
         hungerLevel = hungerLevel - 15;
         if (hungerLevel < 0) {
             hungerLevel = 0;
@@ -51,7 +51,7 @@ public class VirtualPet {
         return hungerLevel;
     }
 
-    public int playWithPet(int boredomLevel) {
+    public int playWithPet() {
         boredomLevel = boredomLevel - 25;
         if (boredomLevel < 0) {
             boredomLevel = 0;
