@@ -13,12 +13,6 @@ public class VirtualPetShelterTest {
         VirtualPetShelter underTest = new VirtualPetShelter();
     }
 
-//    @Test
-//    public void shouldReturnSpecificPetGivenItsName() {
-//        VirtualPetShelter underTest = new VirtualPetShelter();
-//
-//    }
-
     @Test
     public void shouldBeAbleToAddAPetToShelter() {
         VirtualPetShelter underTest = new VirtualPetShelter();
@@ -26,6 +20,15 @@ public class VirtualPetShelterTest {
         underTest.addPetToShelter(testPet);
         Map<String, VirtualPet> virtualPets = underTest.getVirtualPets();
         assertTrue(virtualPets.containsValue(testPet));
+    }
+
+    @Test
+    public void shouldReturnSpecificPetGivenItsName() {
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        VirtualPet testPet = new VirtualPet("Sam", "Norwegian Elkhound");
+        underTest.addPetToShelter(testPet);
+        String test = "Sam";
+        assertEquals(testPet,underTest.returnSpecificPetGivenItsName(test));
     }
 
     @Test
@@ -47,11 +50,13 @@ public class VirtualPetShelterTest {
         VirtualPetShelter underTest = new VirtualPetShelter();
         VirtualPet testPet = new VirtualPet("Sam", "Norwegian Elkhound");
         VirtualPet testPet2 = new VirtualPet("Zoey", "Boxer");
+        VirtualPet testPet3 = new VirtualPet("Marshall", "Fluffy dog");
         underTest.addPetToShelter(testPet);
         underTest.addPetToShelter(testPet2);
         Collection<VirtualPet> petCollection = underTest.getVirtualPetCollection();
-        assertTrue(petCollection.contains(testPet));
-        assertTrue(petCollection.contains(testPet2));
+        assertTrue(petCollection.contains("Sam"));
+        assertTrue(petCollection.contains("Zoey"));
+        assertFalse(petCollection.contains("Marshall"));
     }
 
     @Test
@@ -91,18 +96,18 @@ public class VirtualPetShelterTest {
     }
 
     @Test
-    public void tickShouldTickForAllPets(){
+    public void tickShouldTickForAllPets() {
         VirtualPetShelter underTest = new VirtualPetShelter();
         VirtualPet testPet = new VirtualPet("Sam", "Norwegian Elkhound");
         VirtualPet testPet2 = new VirtualPet("Zoey", "Boxer");
         underTest.addPetToShelter(testPet);
         underTest.addPetToShelter(testPet2);
         underTest.tickForAllPetsAtOnce();
-        assertEquals(20,testPet.getBoredomLevel());
-        assertEquals(20,testPet.getHungerLevel());
-        assertEquals(20,testPet.getThirstLevel());
-        assertEquals(20,testPet2.getThirstLevel());
-        assertEquals(20,testPet2.getHungerLevel());
-        assertEquals(20,testPet2.getBoredomLevel());
+        assertEquals(20, testPet.getBoredomLevel());
+        assertEquals(20, testPet.getHungerLevel());
+        assertEquals(20, testPet.getThirstLevel());
+        assertEquals(20, testPet2.getThirstLevel());
+        assertEquals(20, testPet2.getHungerLevel());
+        assertEquals(20, testPet2.getBoredomLevel());
     }
 }

@@ -13,7 +13,11 @@ public class VirtualPetShelter {
     }
 
     public Collection getVirtualPetCollection() {
-        return virtualPets.values();
+        return virtualPets.keySet();
+    }
+
+    public VirtualPet returnSpecificPetGivenItsName(String petsName) {
+        return virtualPets.get(petsName);
     }
 
     public void addPetToShelter(VirtualPet petToAdd) {
