@@ -8,7 +8,7 @@ public class VirtualPetShelterApp {
         Scanner input = new Scanner(System.in);
         VirtualPet petOne = new VirtualPet("Sammy", "A fluffy Norwegian Elkhound/Collie Mix");
         VirtualPet petTwo = new VirtualPet("Zoey", "A Boxer who is afraid of everything");
-        VirtualPet petThree = new VirtualPet("Joey", "A Golden Retriever who loves going on runs");
+        VirtualPet petThree = new VirtualPet("Rover", "A Golden Retriever who loves going on runs");
         VirtualPetShelter petShelter = new VirtualPetShelter();
         petShelter.addPetToShelter(petOne);
         petShelter.addPetToShelter(petTwo);
@@ -52,6 +52,7 @@ public class VirtualPetShelterApp {
             } else if (userChoice == 5) {
                 System.out.println("\nYou would like to add a pet to the Shelter:\nPlease type in the name of the pet:");
                 String userPetToAddName = input.next();
+                input.nextLine();
                 System.out.println("Please type in a description of " + userPetToAddName + ":");
                 String userPetToAddDescription = input.nextLine();
                 VirtualPet userPetToAdd = new VirtualPet(userPetToAddName,userPetToAddDescription);

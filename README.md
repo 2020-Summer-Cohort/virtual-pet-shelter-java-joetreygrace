@@ -1,1 +1,7 @@
 # Virtual Pet Shelter
+
+I tried to complete the project using TDD. I started by creating my VirtualPet class in my VirtualPetTest. I then tested all my getter methods. I also tested methods give water, food, and play. I then tested a tick method. All tests passed and the VirtualPet was finished. 
+
+Next I created the VirtualPetShelterTest. I created VirtualPetShelter class. I used a map to store all my pets made in the VirtualPet class. Using TDD, I created tests for all required methods needed in the Shelter Class. I have methods to return a collection of pets, return a specific pet, adding pets, removing pets, feeding, playing with, and giving food to pets. I also have a tick method which ticks for all the pets in the map. All my tests passed. 
+
+I then worked on the APP class to finish the project. I used a while loop to loop the game. The loop outputs to the console all the pets in the shelter and their hunger, thirst, and boredom stats. The APP then gives the user the choice to feed, water, play, add a pet, remove a pet, or quit the game. The user inputs 1-6 to make a choice. Then I used else if statements to do what the user picked based on their input. At the end of the user choice the Shelter class ticks for all the pets in the shelter. The game then loops and keeps going until the user quits. 
